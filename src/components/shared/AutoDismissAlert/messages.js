@@ -6,6 +6,12 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
+	indexGamesSuccess:'Games retrieved successfully',
+	indexGamesFailure: 'Failed to get games. Please try again.',
+	showGameSuccess: 'Game retrieved successfully',
+	showGameFailure: 'Failed to get game. Please try again',
+	createGameSuccess: 'Game created successfully',
+	createGameFailure: 'Failed to create game. Please try again',
 }
 
 module.exports = messages
