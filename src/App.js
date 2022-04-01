@@ -78,6 +78,10 @@ const App = () => {
 						</RequireAuth>
 					}
 				/>
+				<Route
+					path='/games/:id'
+					element={<ShowGame msgAlert={msgAlert} user={user} />}
+				/>
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert

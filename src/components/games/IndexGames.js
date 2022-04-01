@@ -48,11 +48,11 @@ const IndexGames = (props) => {
 
     if (games.length > 0 ) {
         gameCards = games.map(game => (
-            <Card key={game.id} style={{ width: '30%' }} className="m-2">
+            <Card key={game._id} style={{ width: '30%' }} className="m-2">
                 <Card.Header>{game.name}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/games/${game.id}`}>
+                        <Link to={`/games/${game._id}`}>
                         View {game.name}
                         </Link>
                     </Card.Text>

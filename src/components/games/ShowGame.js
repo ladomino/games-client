@@ -78,13 +78,19 @@ const ShowGame = (props) => {
                     <Card.Header>{game.name}</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <small>Desscription: {game.description}</small>
+                            <small>Desscription: {game.description}</small><br/>
                             <small>Company: {game.company}</small><br/>
                             <small>Players: {game.players}</small><br/>
                             <small>Price: $ {game.price}</small><br/>
                             <small>
                                 Educational: {game.educational ? 'yes' : 'no'}
-                            </small>
+                            </small><br/>
+                            <small>
+                                Puzzle: {game.puzzle ? 'yes' : 'no'}
+                            </small><br/>
+                            <small>
+                                Family: {game.family ? 'yes' : 'no'}
+                            </small><br/>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>

@@ -68,7 +68,7 @@ const CreateGame = (props) => {
 
         createGame(user, game)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/games/${res.data.game.id}`)})
+            .then(res => {navigate(`/games/${res.data.game._id}`)})
             // then we send a success message
             .then(() =>
                 msgAlert({
