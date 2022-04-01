@@ -3,8 +3,7 @@ import { getOneGame, updateGame, removeGame } from '../../api/games'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button } from 'react-bootstrap'
 import {showGameSuccess, showGameFailure} from '../shared/AutoDismissAlert/messages'
-// import EditPetModal from './EditPetModal'
-// import ShowToy from '../toys/ShowToy'
+import EditGameModal from './EditGameModal'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -43,7 +42,9 @@ const ShowGame = (props) => {
     }, [updated])
 
     const removeTheGame = () => {
-        removeGame(user, game.id)
+        console.log("removeTheGame id", game.id)
+        console.log("removeTheGame _id", game._id)
+        removeGame(user, game._id)
             .then(() => {
                 msgAlert({
                     heading: 'game has been removed!',
@@ -94,13 +95,24 @@ const ShowGame = (props) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button onClick={() => removeTheGame()}className="m-2" variant="danger">
+                         <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
+                            Edit Game
+                        </Button>
+                        <Button onClick={() => removeTheGame()} className="m-2" variant="danger">
                             Delete Game
                         </Button>
-
                     </Card.Footer>
                 </Card>
             </Container>
+            <EditGameModal 
+                game={game}
+                show={modalOpen}
+                user={user}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                updateGame={updateGame}
+                handleClose={() => setModalOpen(false)}
+            />
         </>
     )
 }

@@ -38,7 +38,7 @@ export const updateGame = (user, updatedGame) => {
     console.log('this is the updated game', updatedGame)
 
     return axios({
-        url: `${apiUrl}/games/${updatedGame.id}`,
+        url: `${apiUrl}/games/${updatedGame._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`
