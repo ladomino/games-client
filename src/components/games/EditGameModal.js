@@ -59,16 +59,16 @@ const EditGameModal = (props) => {
             // then we send a success message
             .then(() =>
                 msgAlert({
-                    heading: 'Game Updated! Success!',
-                    message: 'game has been updated',
+                    heading: 'Game updated!',
+                    message: 'The game has been updated',
                     variant: 'success',
                 }))
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
-                    heading: 'Game Update Failed!',
-                    message: 'game has not been updated',
+                    heading: 'Game update has failed!',
+                    message: 'The game has not been updated',
                     variant: 'danger',
                 }))
         console.log('this is the game', game)
@@ -82,7 +82,7 @@ const EditGameModal = (props) => {
                     game={game}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Edit the Game!"
+                    heading="Edit the game!"
                 />
             </Modal.Body>
         </Modal>

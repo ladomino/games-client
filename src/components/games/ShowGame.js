@@ -16,21 +16,21 @@ const ShowGame = (props) => {
     const navigate = useNavigate()
 
     console.log('id in showGame', id)
-    
+
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
         getOneGame(id)
             .then(res => setGame(res.data.game))
             .then(() => {
                 msgAlert({
-                    heading: 'Here is the game!',
+                    heading: 'Game has been retrieved!',
                     message: showGameSuccess,
                     variant: 'success',
                 })
             })
             .catch(() => {
                 msgAlert({
-                    heading: 'No game found',
+                    heading: 'Failed to find the game',
                     message: showGameFailure,
                     variant: 'danger',
                 })
@@ -43,16 +43,16 @@ const ShowGame = (props) => {
         removeGame(user, game._id)
             .then(() => {
                 msgAlert({
-                    heading: 'game has been removed!',
-                    message: 'game is gone',
+                    heading: 'The game has been removed!',
+                    message: 'The game has been deleted',
                     variant: 'success',
                 })
             })
             .then(() => {navigate(`/`)})
             .catch(() => {
                 msgAlert({
-                    heading: 'game deletion failed.',
-                    message: 'failed to delete game',
+                    heading: 'Game deletion failed.',
+                    message: 'Gailed to delete game',
                     variant: 'danger',
                 })
             })

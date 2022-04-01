@@ -72,7 +72,7 @@ const CreateGame = (props) => {
             // then we send a success message
             .then(() =>
                 msgAlert({
-                    heading: 'Game Added! Success!',
+                    heading: 'The Game has been Added!',
                     message: createGameSuccess,
                     variant: 'success',
                 }))
@@ -91,7 +91,7 @@ const CreateGame = (props) => {
             game={game}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            heading="Add new game!"
+            heading="Add a new game!"
         />
     )
 }

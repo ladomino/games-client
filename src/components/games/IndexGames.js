@@ -25,14 +25,14 @@ const IndexGames = (props) => {
         })
         .then(() => {
             msgAlert({
-                heading: 'Games have been found!',
+                heading: 'Games have been retrieved!',
                 message: indexGamesSuccess,
                 variant: 'success',
             })
         })
         .catch(() => {
             msgAlert({
-                heading: 'No games found!!',
+                heading: 'Failed to retrieve games!!',
                 message: indexGamesFailure,
                 variant: 'danger',
             })
