@@ -14,8 +14,9 @@ const cardContainerLayout = {
 }
 
 const IndexGames = (props) => {
+
     const [games, setGames] = useState(null)
-    const {user, msgAlert} = props
+    const {msgAlert} = props
 
     useEffect(() => {
         getAllGames()

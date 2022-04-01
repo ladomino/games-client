@@ -5,11 +5,6 @@ import { Spinner, Container, Card, Button } from 'react-bootstrap'
 import {showGameSuccess, showGameFailure} from '../shared/AutoDismissAlert/messages'
 import EditGameModal from './EditGameModal'
 
-const cardContainerLayout = {
-    display: 'flex',
-    justifyContent: 'center',
-    flexFlow: 'row wrap'
-}
 
 const ShowGame = (props) => {
 
@@ -21,6 +16,7 @@ const ShowGame = (props) => {
     const navigate = useNavigate()
 
     console.log('id in showGame', id)
+    
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
         getOneGame(id)

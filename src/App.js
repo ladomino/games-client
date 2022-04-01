@@ -80,7 +80,7 @@ const App = () => {
 				/>
 				<Route
 					path='/games/:id'
-					element={<ShowGame msgAlert={msgAlert} user={user} />}
+					element={<ShowGame msgAlert={msgAlert} />}
 				/>
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
